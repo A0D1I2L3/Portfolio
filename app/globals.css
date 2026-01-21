@@ -93,9 +93,9 @@ span {
 }
 
 .home-content p {
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: 500;
-    line-height: 1.8;
+    line-height: 2;
     max-width: 1000px;
 }
 
@@ -375,6 +375,33 @@ h2 {
     margin: 0 auto;
 }
 
+/* SpotlightCard styling for skills section */
+.skill-card-spotlight {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 300px;
+    border: 3px solid var(--main-color) !important;
+    border-radius: 20px !important;
+    transition: box-shadow 0.3s ease;
+}
+
+.skill-card-spotlight:hover {
+    box-shadow: 0 0 40px var(--main-color);
+}
+
+.skill-card-spotlight h3 {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: var(--main-color);
+    position: relative;
+    z-index: 1;
+}
+
 .skill-box {
     border: 3px solid var(--main-color);
     border-radius: 20px;
@@ -405,6 +432,8 @@ h2 {
     flex-wrap: wrap;
     gap: 1.6rem 2rem;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .skill-item {
@@ -563,4 +592,38 @@ textarea:focus::placeholder {
         font-size: 2.4rem;
         margin-bottom: 2rem;
     }
+}
+
+/* Home must be the background container */
+.home-with-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background ONLY fills Home, not whole website */
+.home-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: auto; /* mouse interaction works */
+}
+
+/* Ensure background fills properly */
+.home-bg > * {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Foreground content always above */
+.home-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Cube above everything */
+.cube-wrap {
+    position: relative;
+    z-index: 3;
 }

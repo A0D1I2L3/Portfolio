@@ -3,7 +3,7 @@ import { Poppins, Quicksand, Roboto } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
-  weight: ["300"],
+  weight: ["400"],
   subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
