@@ -1,0 +1,566 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: var(--font-poppins), sans-serif;
+}
+
+:root {
+    --bg-color: black;
+    --second-bg-color: #131313;
+    --main-color: #41b06e;
+    --text-color: white;
+}
+
+html {
+    font-size: 60%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4rem 12%;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3rem;
+}
+
+.home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+
+.home-content p {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: var(--text-color);
+    transform: scale(1.3) translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.4rem;
+    margin-right: 10px;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.5rem;
+    color: black;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.btn-group a:nth-of-type(2) {
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+
+.btn-group a:nth-of-type(2):hover {
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: black;
+}
+
+.text-animation {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    min-width: 280px;
+    position: relative;
+}
+
+.text-animation span {
+    position: relative;
+    display: inline-block;
+}
+
+.text-animation span:before {
+    content: "FullStack Dev";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span:after {
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation:
+        cursor 0.6s infinite,
+        typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes words {
+    0%,
+    20% {
+        content: "Web Designer";
+    }
+    21%,
+    40% {
+        content: "Full Stack Dev";
+    }
+    41%,
+    60% {
+        content: "Pen Tester";
+    }
+    61%,
+    80% {
+        content: "Web Developer";
+    }
+    81%,
+    100% {
+        content: "UI/UX Designer";
+    }
+}
+
+@keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px);
+    }
+}
+
+h2 {
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.projects {
+    width: 100%;
+    font-family: var(--font-poppins), sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pros {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4% auto;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.project-card {
+    flex: 1 1 300px;
+    max-width: 45%;
+    min-width: 280px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 15px;
+    background: transparent;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 16px;
+    transition:
+        box-shadow 0.1s,
+        transform 0.3s;
+}
+
+.project-card:hover {
+    box-shadow:
+        0 0 10px var(--main-color),
+        0 0 30px var(--main-color);
+    transform: scale(1.01);
+    text-decoration: none;
+}
+
+.project-img {
+    object-fit: scale-down;
+    height: 300px;
+}
+
+.project-title {
+    font-size: 2em;
+    margin: 15px 0 10px 0;
+}
+
+.project-desc {
+    font-size: 1.3em;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.see-more-btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#cube {
+    width: min(90vw, 500px);
+    height: 80svh;
+    display: block;
+    touch-action: none;
+}
+
+@media (max-width: 900px) {
+    #cube {
+        width: 100vw;
+        height: 35vh;
+    }
+    .project-card {
+        max-width: 70%;
+    }
+    .pros {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .pros {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        max-width: 90%;
+        margin: 15px 0;
+    }
+}
+
+.skills-section {
+    background-color: #000000;
+    padding: 6rem 8%;
+    margin-top: -3%;
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 6rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2.2rem;
+    color: white;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-box {
+    border: 3px solid var(--main-color);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    background: #121212;
+    transition: box-shadow 0.3s ease;
+    color: white;
+}
+
+.skill-box:hover {
+    box-shadow: 0 0 40px var(--main-color);
+}
+
+.skill-box h3 {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem 2rem;
+    justify-content: center;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    user-select: none;
+    cursor: default;
+    transition: color 0.3s ease;
+}
+
+.skill-item img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.skill-item:hover {
+    color: var(--main-color);
+}
+
+.contact {
+    background-color: var(--bg-color);
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.contact form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border-radius: 2rem;
+    border: 2px solid var(--main-color);
+    margin: 1.5rem;
+    resize: none;
+}
+
+.input-group {
+    margin: 10px;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+}
+
+input:required,
+textarea:required {
+    border: 2px solid #e3342f;
+}
+
+input:valid,
+textarea:valid {
+    border: 2px solid #34c38f;
+}
+
+form:invalid button {
+    cursor: not-allowed;
+}
+
+input:invalid:focus,
+textarea:invalid:focus {
+    outline: none;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
+}
+
+@media (max-width: 960px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem 0;
+    }
+    .skill-box {
+        width: 100%;
+        max-width: 600px;
+        min-height: 360px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 895px) {
+    .important {
+        display: none;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        padding: 1rem 0;
+        width: 100%;
+    }
+    .navbar a {
+        font-size: 1.6rem;
+        margin: 0;
+    }
+    .home {
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+    .home-content h3 {
+        font-size: 2.8rem;
+    }
+    .home-content h1 {
+        font-size: 4.4rem;
+    }
+    .home-content p {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 3.6rem;
+        margin-bottom: 2rem;
+        margin-top: 6rem;
+    }
+    .skills-grid {
+        gap: 2.4rem 0;
+    }
+    .skill-box {
+        width: 100%;
+        max-width: 90%;
+        min-height: 200px;
+        padding: 2rem 1.5rem;
+    }
+    .skill-box h3 {
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+    }
+}
